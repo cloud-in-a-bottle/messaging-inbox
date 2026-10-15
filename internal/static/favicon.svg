@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- A bottle holding two overlapping speech bubbles: messages from every network in one place. -->
+  <rect x="25" y="2" width="14" height="7" rx="2" fill="#a86b32"/>
+  <path d="M23 9h18v8c0 2 2 3 5 4.5C52 24 56 28 56 35v19a8 8 0 0 1-8 8H16a8 8 0 0 1-8-8V35c0-7 4-11 10-13.5 3-1.5 5-2.5 5-4.5z" fill="#5b5bd6"/>
+  <path d="M17 31h20a4 4 0 0 1 4 4v9a4 4 0 0 1-4 4H26l-6 5v-5h-3a4 4 0 0 1-4-4v-9a4 4 0 0 1 4-4z" fill="#ffffff"/>
+  <path d="M30 39h17a4 4 0 0 1 4 4v7a4 4 0 0 1-4 4h-1v4l-5-4H30a4 4 0 0 1-4-4v-7a4 4 0 0 1 4-4z" fill="#1fa855" opacity=".95"/>
+</svg>

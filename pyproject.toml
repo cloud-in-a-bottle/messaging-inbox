@@ -1,0 +1,38 @@
+# Python is only used for the container tests in tests/, which use the OpenHost test harness. The app is Go.
+[project]
+name = "messaging-inbox-tests"
+version = "0.1.0"
+requires-python = "==3.13.*"
+dependencies = []
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "ruff",
+    "pre-commit",
+    "pytest>=8.0",
+    "pytest-playwright",
+    "playwright",
+    "httpx>=0.27",
+    # Builds the app's Dockerfile, runs it under podman with the mounts/env its
+    # openhost.toml declares, and fronts it with the real OpenHost router (real
+    # subdomain routing and cookie auth). Tests hit a real, containerized app.
+    # Requires podman on the host.
+    "openhost[test-harness] @ git+https://github.com/imbue-openhost/openhost@main",
+]
+
+[tool.pytest.ini_options]
+addopts = "-v"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 119
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "UP", "I", "PLC0415"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+force-single-line = true

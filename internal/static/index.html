@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Inbox</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/core/app.css">
+  <link rel="stylesheet" href="/static/inbox.css">
+</head>
+<body>
+  <div id="app">
+    <div class="shell">
+      <aside class="sidebar">
+        <header class="bar">
+          <strong class="title">Inbox</strong>
+          <button class="icon" data-action="new-chat" title="New chat" aria-label="New chat">✎</button>
+        </header>
+        <div class="providers" id="providers"></div>
+        <div class="search"><input type="search" id="search" placeholder="Search all messages"></div>
+        <ul class="conversations" id="conversations"></ul>
+        <ul class="search-results" id="search-results" hidden></ul>
+      </aside>
+      <section class="thread" id="thread">
+        <div class="empty">Select a conversation</div>
+      </section>
+    </div>
+  </div>
+
+  <template id="tpl-thread">
+    <header class="bar">
+      <button class="icon back" data-action="back" aria-label="Back">‹</button>
+      <span class="thread-avatar" data-field="avatar"></span>
+      <div class="thread-title">
+        <strong data-field="name"></strong>
+        <small data-field="subtitle"></small>
+      </div>
+    </header>
+    <div class="messages" id="messages">
+      <button class="load-more" data-action="load-more" hidden>Load earlier messages</button>
+      <button class="load-more" data-action="load-older" hidden></button>
+      <ol id="message-list"></ol>
+    </div>
+    <div class="typing" id="typing" hidden></div>
+    <form class="composer" id="composer">
+      <div class="reply-bar" id="reply-bar" hidden>
+        <div><small data-field="reply-label"></small>
+          <div data-field="reply-text"></div></div>
+        <button type="button" class="icon" data-action="cancel-reply" aria-label="Cancel">✕</button>
+      </div>
+      <div class="pending-files" id="pending-files" hidden></div>
+      <div class="row">
+        <label class="icon attach" title="Attach files" aria-label="Attach files">📎
+          <input type="file" id="file-input" multiple hidden></label>
+        <textarea id="composer-input" rows="1" placeholder="Message"></textarea>
+        <button type="submit" class="send" aria-label="Send">➤</button>
+      </div>
+    </form>
+  </template>
+
+  <template id="tpl-new-chat">
+    <div class="modal-backdrop">
+      <div class="modal">
+        <header class="bar"><strong class="title">New chat</strong>
+          <button class="icon" data-action="close" aria-label="Close">✕</button></header>
+        <div class="modal-body">
+          <div class="network-picker" id="network-picker"></div>
+          <form id="people-search" class="inline">
+            <input type="search" id="people-query" placeholder="Name" autocomplete="off">
+            <button type="submit">Search</button>
+          </form>
+          <form id="phone-form" class="inline" hidden>
+            <input id="phone-input" type="tel" placeholder="Phone number, eg +15551234567" autocomplete="off">
+            <button type="submit">Start chat</button>
+          </form>
+          <ul class="contacts" id="people"></ul>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script src="/static/inbox.js" type="module"></script>
+</body>
+</html>

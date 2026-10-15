@@ -1,0 +1,30 @@
+repos:
+  - repo: local
+    hooks:
+      - id: gofmt
+        name: gofmt
+        entry: gofmt -l -w
+        language: system
+        types: [go]
+      - id: go-vet
+        name: go vet
+        entry: go vet ./...
+        language: system
+        pass_filenames: false
+        types: [go]
+      - id: ruff-check
+        name: "ruff auto-fix"
+        entry: uv run --group dev ruff check
+        language: system
+        types: [python]
+        args: ["--fix", "--force-exclude"]
+      - id: ruff-format
+        name: "ruff format"
+        entry: uv run --group dev ruff format
+        language: system
+        types: [python]
+        args: ["--force-exclude"]
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
+      - id: gitleaks

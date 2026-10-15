@@ -1,0 +1,23 @@
+/* What the inbox adds to the messaging apps' look (/static/core/app.css). */
+:root { --accent: #5b5bd6; }
+
+.providers { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 12px; border-bottom: 1px solid var(--border); }
+.providers .hint { margin: 0; }
+.provider {
+  display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px;
+  background: var(--bg-soft); color: var(--fg); font-size: 13px; text-decoration: none;
+}
+.provider:hover { background: var(--bg-hover); }
+.provider.bad { color: var(--danger); }
+.provider .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+
+/* Which network a chat is on. */
+.net {
+  display: inline-block; vertical-align: 1px; margin-left: 4px; padding: 0 6px; border-radius: 6px;
+  font-size: 11px; font-weight: 500; line-height: 16px;
+  color: var(--net); border: 1px solid color-mix(in srgb, var(--net) 45%, transparent);
+}
+
+.network-picker { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+.network-picker button { background: var(--bg-soft); color: var(--fg); }
+.network-picker button.active { background: var(--accent); color: var(--accent-fg); }

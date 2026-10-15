@@ -1,0 +1,24 @@
+[app]
+name = "messaging-inbox"
+version = "0.1.0"
+description = "All your chats in one place: reads and sends through every messaging app that provides the messaging service"
+
+[runtime.container]
+image = "Dockerfile"
+port = 8080
+
+[routing]
+health_check = "/health"
+
+[resources]
+memory_mb = 128
+build_memory_mb = 1024
+cpu_cores = 0.25
+
+# The messaging apps (bottled-whatsapp, bottled-fb-messenger, bottled-instagram, ...) provide this; the inbox reads
+# chats and sends messages through all of them. Nothing is stored here: the apps are the source of truth.
+[[services.v2.consumes]]
+service = "github.com/cloud-in-a-bottle/messaging-service-spec"
+shortname = "messaging"
+version = ">=0.1.0"
+grants = ["read", "write"]
