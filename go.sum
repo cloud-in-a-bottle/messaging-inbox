@@ -1,4 +1,4 @@
-github.com/cloud-in-a-bottle/bottled-bridge-core v0.0.0-20261015185717-808dbe0021b3 h1:AJukPa1YGJCZWvCXL7/GFk7WxVrYjTBs7QR8V620X6M=
-github.com/cloud-in-a-bottle/bottled-bridge-core v0.0.0-20261015185717-808dbe0021b3/go.mod h1:JmXN7iELEz2AIQXwS+UvzAu31Bgbu7eBBJiONwhzsT8=
+github.com/cloud-in-a-bottle/bottled-bridge-core v0.0.0-20261015213754-581eeb9fd635 h1:wc/NakxfEsTwnFsYTsxHHX7aE8Xq9T00r8Kof0JJ71Y=
+github.com/cloud-in-a-bottle/bottled-bridge-core v0.0.0-20261015213754-581eeb9fd635/go.mod h1:JmXN7iELEz2AIQXwS+UvzAu31Bgbu7eBBJiONwhzsT8=
 github.com/cloud-in-a-bottle/messaging-service-spec v0.1.0 h1:GgIMwED2/1iyaTzt+xiMweXXhgMM+mlMOu4rsQ2rMZs=
 github.com/cloud-in-a-bottle/messaging-service-spec v0.1.0/go.mod h1:pKuXwzhQqSCDlB+pUw7fZp6pa+Dw2AYRbLm1MQmgBsI=
