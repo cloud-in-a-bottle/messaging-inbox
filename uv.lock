@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = "==3.13.*"
 
 [[package]]
@@ -836,8 +836,8 @@ wheels = [
 
 [[package]]
 name = "openhost"
-version = "0.2.0"
-source = { git = "https://github.com/imbue-openhost/openhost?rev=main#df48f33a96c690b428a8c8a327d7c37d41830096" }
+version = "0.3.2"
+source = { git = "https://github.com/imbue-openhost/openhost?rev=main#066d9d85218af717a069d67c1df99d7c3b395ee6" }
 dependencies = [
     { name = "acme" },
     { name = "argon2-cffi" },
