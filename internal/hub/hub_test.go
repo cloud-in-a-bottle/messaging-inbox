@@ -81,11 +81,11 @@ func newTestHub(t *testing.T) (*Hub, map[string]*fakeProvider) {
 	}
 	router := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path == "/api/services/v2/providers" {
-			_ = json.NewEncoder(w).Encode([]messaging.ProviderInfo{
+			_ = json.NewEncoder(w).Encode(map[string][]messaging.ProviderInfo{"providers": {
 				{AppID: "wa", AppName: "bottled-whatsapp", Status: "running"},
 				{AppID: "fb", AppName: "bottled-fb-messenger", Status: "running"},
 				{AppID: "ig", AppName: "bottled-instagram", Status: "stopped"},
-			})
+			}})
 			return
 		}
 		p, ok := providers[r.Header.Get("X-OpenHost-Provider")]
